@@ -27,68 +27,23 @@ export default new Router({
     }, {
       path: '/home',
       component: Home,
-      name: '文章管理',
+      name: '变更管理',
       iconCls: 'fa fa-file-text-o',
       children: [
         {
-          path: '/articleList',
-          name: '文章列表',
-          component: ArticleList,
+          path: '/postArticle',
+          name: '新建变更',
+          component: PostArticle,
           meta: {
             keepAlive: true
           }
         }, {
-          path: '/postArticle',
-          name: '发表文章',
-          component: PostArticle,
+          path: '/articleBoard',
+          name: '变更看板',
+          component: ArticleList,
           meta: {
             keepAlive: false
           }
-        }, {
-          path: '/blogDetail',
-          name: '博客详情',
-          component: BlogDetail,
-          hidden: true,
-          meta: {
-            keepAlive: false
-          }
-        }, {
-          path: '/editBlog',
-          name: '编辑博客',
-          component: PostArticle,
-          hidden: true,
-          meta: {
-            keepAlive: false
-          }
-        }
-      ]
-    }, {
-      path: '/home',
-      component: Home,
-      name: '系统管理',
-      children: [
-        {
-          path: '/user',
-          iconCls: 'fa fa-user-o',
-          name: '用户管理',
-          component: UserMana,
-        }, {
-          path: '/test',
-          iconCls: 'fa fa-user-o',
-          name: '角色管理',
-          component: TestMana
-        }
-      ]
-    }, {
-      path: '/home',
-      component: Home,
-      name: '栏目管理',
-      children: [
-        {
-          path: '/cateMana',
-          iconCls: 'fa fa-reorder',
-          name: '栏目管理',
-          component: CateMana
         }
       ]
     }, {
